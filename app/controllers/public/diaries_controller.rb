@@ -25,6 +25,6 @@ class Public::DiariesController < ApplicationController
 
 	private
 	def diary_params
-		params.require(:diary).permit(:user_id, :title, :body, :image)
+		params.require(:diary).permit(:user_id, :title, :body, :image, :emotion_status)
 	end
 end

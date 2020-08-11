@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_11_043216) do
+ActiveRecord::Schema.define(version: 2020_08_11_091126) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2020_08_11_043216) do
     t.string "title"
     t.string "body"
     t.string "image_id"
+    t.integer "emotion_status", default: 0, null: false
   end
 
   create_table "favorites", force: :cascade do |t|

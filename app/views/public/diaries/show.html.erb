@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-6">
-			<table class="table">
+			<table class="table table-bordered">
 				<thead>
 					<th><%= @diary.title %></th>
 				</thead>
@@ -14,6 +14,11 @@
 					<tr>
 						<td>
 							<%= @diary.body %>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							書いた時の感情：<span class="badge badge-info"><%= @diary.emotion_status_i18n %></span>
 						</td>
 					</tr>
 					<tr>
