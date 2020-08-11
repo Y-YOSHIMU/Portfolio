@@ -16,6 +16,13 @@
 							<%= @diary.body %>
 						</td>
 					</tr>
+					<% if @diary.favorited_by?(current_user) %>
+					<tr>
+					    <p><span>お気に入り解除：</span><%= link_to @diary.favorites.count, diary_favorites_path(@diary.id), method: :delete %></p>
+					  <% else %>
+					    <p><span>お気に入り登録：</span><%= link_to @diary.favorites.count, diary_favorites_path(@diary.id), method: :post %></p>
+					</tr>
+					<% end %>
 				</tbody>
 			</table>
 		</div>

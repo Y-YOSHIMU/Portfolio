@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_10_060640) do
+ActiveRecord::Schema.define(version: 2020_08_11_043216) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 2020_08_10_060640) do
     t.string "title"
     t.string "body"
     t.string "image_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "diary_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["diary_id"], name: "index_favorites_on_diary_id"
+    t.index ["user_id", "diary_id"], name: "index_favorites_on_user_id_and_diary_id", unique: true
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
