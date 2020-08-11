@@ -1,0 +1,6 @@
+<h1>お気に入り一覧</h1>
+<% @favorites.each do |favorite| %>
+	<%= link_to diary_path(favorite.diary_id) do %>
+		<%= favorite.diary.title %>
+	<% end %>
+<% end %>

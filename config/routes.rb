@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   	get 'about' => 'home#about'
   	get 'users/mypage' => 'users#show', as: 'mypage'
   	resources :diaries do
-  		resource :favorites
+  		resource :favorites, only: [:create, :destroy]
   	end
+  	get 'users/favorites' => 'favorites#index', as: 'favorites'
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
