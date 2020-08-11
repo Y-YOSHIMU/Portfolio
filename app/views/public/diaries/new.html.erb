@@ -18,6 +18,9 @@
 					<%= f.label :"本文" %>
 					<%= f.text_area :body %>
 				</div>
+				<div>
+					<%= f.select :emotion_status, Diary.emotion_statuses.keys.map {|k| [I18n.t("enums.diary.emotion_status.#{k}"), k]} %>
+				</div>
 				<%= f.submit "投稿", class: "btn btn-primary" %>
 			</div>
 		<% end %>

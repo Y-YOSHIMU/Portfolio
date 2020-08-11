@@ -1,0 +1,7 @@
+ja:
+  enums:
+    diary:
+      emotion_status:
+        normal: "普通"
+        positive: "ポジティブ"
+        negative: "ネガティブ"

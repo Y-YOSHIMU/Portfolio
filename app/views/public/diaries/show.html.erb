@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-6">
-			<table class="table">
+			<table class="table table-bordered">
 				<thead>
 					<th><%= @diary.title %></th>
 				</thead>
@@ -15,6 +15,16 @@
 						<td>
 							<%= @diary.body %>
 						</td>
+					</tr>
+					<tr>
+						<td>
+							書いた時の感情：<span class="badge badge-info"><%= @diary.emotion_status_i18n %></span>
+						</td>
+					</tr>
+					<tr>
+						<td id="favorites_buttons_<%= @diary.id %>">
+							<%= render partial: 'public/favorites/favorite', locals: { diary: @diary} %>
+					    </td>
 					</tr>
 				</tbody>
 			</table>

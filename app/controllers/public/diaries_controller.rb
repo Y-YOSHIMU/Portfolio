@@ -19,8 +19,12 @@ class Public::DiariesController < ApplicationController
 		@diary = Diary.find(params[:id])
 	end
 
+	def index
+		@diaries = Diary.all
+	end
+
 	private
 	def diary_params
-		params.require(:diary).permit(:user_id, :title, :body, :image)
+		params.require(:diary).permit(:user_id, :title, :body, :image, :emotion_status)
 	end
 end
