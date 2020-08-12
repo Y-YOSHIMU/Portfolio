@@ -13,17 +13,12 @@
 					</tr>
 					<tr>
 						<td>
-							<%= @diary.body %>
+							<%= simple_format(render_with_hashtags(@diary.body)) %>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							書いた時の感情：<span class="badge badge-info"><%= @diary.emotion_status_i18n %></span>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<%= render_with_hashtags(@diary.body) %>
 						</td>
 					</tr>
 					<tr>

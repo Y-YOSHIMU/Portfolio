@@ -17,6 +17,8 @@ class Public::DiariesController < ApplicationController
 
 	def show
 		@diary = Diary.find(params[:id])
+		# @hashtag = DiaryHashtag.where(diary_id: @diary.id)
+		# @hashtags = Hashtag.find(id: @hashtag)
 	end
 
 	def index

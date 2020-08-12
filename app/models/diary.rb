@@ -35,4 +35,15 @@ class Diary < ApplicationRecord
 	def favorited_by?(user)
 		favorites.where(user_id: user.id).exists?
 	end
+
+	def Diary.search(search, diary_or_hashtag, how_search)
+		if diary_or_hashtag == "1"
+			if how_search == "1"
+				Diary.where(['title LIKE ? OR body LIKE ?', "%#{search}%", "%#{search}%"])
+			elsif how_search == "2"
+				Diary.where(['title LIKE ? OR body LIKE ?', "#{search}", "#{search}"])
+			end
+		end
+	end
+
 end
