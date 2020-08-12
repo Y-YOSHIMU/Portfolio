@@ -23,8 +23,19 @@ class Public::DiariesController < ApplicationController
 		@diaries = Diary.all
 	end
 
+	def hashtag
+		@user = current_user
+		if params[:name].nil?
+			@hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.diaries.count}
+		else
+			@hashtag = Hashtag.find_by(hashname: params[:name])
+			@diary = @hashtag.diaries.page(params[:page]).per(20).reverse_order
+			@hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.diaries.count}
+		end
+	end
+
 	private
 	def diary_params
-		params.require(:diary).permit(:user_id, :title, :body, :image, :emotion_status)
+		params.require(:diary).permit(:user_id, :title, :body, :image, :emotion_status, hashtag_ids: [])
 	end
 end

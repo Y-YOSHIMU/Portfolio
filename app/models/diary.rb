@@ -2,6 +2,29 @@ class Diary < ApplicationRecord
 	belongs_to :user
 	has_many :favorites, dependent: :destroy
 	attachment :image
+    has_many :diary_hashtags, dependent: :destroy
+    has_many :hashtags, through: :diary_hashtags
+
+#DBへのコミット直前に実施する
+  	after_create do
+    	diary = Diary.find_by(id: self.id)
+    	hashtags = body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+    	hashtags.uniq.map do |hashtag|
+      #ハッシュタグは先頭の'#'を外した上で保存
+      		tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
+      		diary.hashtags << tag
+    	end
+  	end
+
+  	before_update do
+    	diary = Diary.find_by(id: self.id)
+    	diary.hashtags.clear
+    	hashtags = body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+    	hashtags.uniq.map do |hashtag|
+      		tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
+      		diary.hashtags << tag
+    	end
+  	end
 
 	enum emotion_status:{
     normal:       0, #普通

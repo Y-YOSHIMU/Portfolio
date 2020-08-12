@@ -22,6 +22,11 @@
 						</td>
 					</tr>
 					<tr>
+						<td>
+							<%= render_with_hashtags(@diary.body) %>
+						</td>
+					</tr>
+					<tr>
 						<td id="favorites_buttons_<%= @diary.id %>">
 							<%= render partial: 'public/favorites/favorite', locals: { diary: @diary} %>
 					    </td>

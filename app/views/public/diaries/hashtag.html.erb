@@ -1,0 +1,35 @@
+<div class="row">
+        <% if params[:name] == nil %>
+
+        <% else %>
+        <div class= "col-xs-12">
+            <div>
+                <h3>#<%= @hashtag.hashname %>:  <%= @diary.count %> 件 </h3>
+                <div class="flex-box">
+                <% @diary.each do |diary| %>
+                    <div>
+                        <p>
+                            <%= diary.created_at.strftime("%Y/%m/%d") %>
+                        </p>
+                        <span id="favorites-buttons_<%= diary.id %>">
+                            <%= render partial: 'public/favorites/favorite', locals: { diary: diary} %>
+                        </span>
+                    </div>
+                <% end %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    <div class="row">
+        <div class= "col-xs-12">
+            <div>
+                <% @hashtags.sort.reverse.each do |count| %>
+                        <% count[1].each do |hashtag| %>
+                        <p><%= link_to  "##{hashtag.hashname} (#{hashtag.post_images.count}) 件","/post_image/hashtag/#{hashtag.hashname}" %>
+                        </p>
+                        <% end %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
