@@ -1,0 +1,29 @@
+<div class="row">
+    <% if params[:name] == nil %>
+
+    <% else %>
+    <div class="col-xs-6">
+        <h3>#<%= @hashtag.hashname %>:  <%= @diary.count %> 件 </h3>
+            <% @diary.each do |diary| %>
+                <div>
+                        <%= diary.created_at.strftime("%Y/%m/%d") %>
+                    <span id="favorites-buttons_<%= diary.id %>">
+                        <%= render partial: 'public/favorites/favorite', locals: { diary: diary} %>
+                    </span>
+                </div>
+            <% end %>
+    </div>
+    <% end %>
+</div>
+<div class="row">
+    <div class= "col-xs-6">
+        <div>
+            <% @hashtags.sort.reverse.each do |count| %>
+                    <% count[1].each do |hashtag| %>
+                    <p><%= link_to  "##{hashtag.hashname} (#{hashtag.diaries.count}) 件","/diary/hashtag/#{hashtag.hashname}" %>
+                    </p>
+                    <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>

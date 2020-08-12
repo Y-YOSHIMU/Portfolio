@@ -13,7 +13,7 @@
 					</tr>
 					<tr>
 						<td>
-							<%= @diary.body %>
+							<%= simple_format(render_with_hashtags(@diary.body)) %>
 						</td>
 					</tr>
 					<tr>
