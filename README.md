@@ -55,3 +55,24 @@ Things you may want to cover:
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/10UyRf-rKzS2BviMOxJxXjyf2XBzXsNF5qrEuBhlxdNM/edit?usp=sharing
+
+				if(emotion_status == "normal"){
+					backgroundColor: 'FF0';
+				}
+				else if(emotion_status == "positive"){
+					backgroundColor: '#F00';
+				}
+				else if(emotion_status == "negative"){
+					backgroundColor: '#00F';
+				}
+				
+				if(emotion_status == "normal"){
+					cell.css("backgroundColor", 'FF0');
+				}
+				else if(emotion_status == "positive"){
+					cell.css("backgroundColor", '#F00');
+				}
+				else if(emotion_status == "negative"){
+					cell.css("backgroundColor", '#00F');
+				}
+
