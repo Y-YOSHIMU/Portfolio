@@ -6,9 +6,9 @@ json.array!(@diaries) do |diary|
 	json.backgroundColor case diary.emotion_status
 		                 when "positive"
 		                 	"red"
-		                 when  "negative"
+		                 when "negative"
 		                 	"blue"
 		                 else
-		                 	"gray"
+		                 	"yellow"
 		                 end
 end
