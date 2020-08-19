@@ -22,7 +22,7 @@ class Public::DiariesController < ApplicationController
 	end
 
 	def index
-		@diaries = Diary.all
+		@diaries = Diary.where(user_id: current_user.id)
 	end
 
 	def hashtag

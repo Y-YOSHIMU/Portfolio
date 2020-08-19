@@ -10,7 +10,37 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *= require_tree .
-*= require_self
-*= require fullcalendar
+ *= require_self
+ *= require fullcalendar
  */
 @import "bootstrap";
+
+header {
+	display: flex;
+	position: relative;
+	padding: 15px 0 15px 20px;
+	background-color: green;
+}
+
+.header_logo {
+	margin_left: 80px;
+}
+
+nav {
+	margin: auto 0 auto auto;
+}
+
+.nav-list {
+	margin: auto 0;
+	align-items: center;
+
+}
+
+.nav-list-item {
+	list-style: none;
+	display: inline-block;
+}
+
+.nav-link {
+	color: red;
+}
