@@ -4,9 +4,9 @@ class Public::SearchController < ApplicationController
 	@how_search = params[:choice]
 	@search = params[:search]
 	if @diary_or_hashtag == "1"
-		@diaries = Diary.search(params[:search], @diary_or_hashtag, @how_search)
+		@diaries = Diary.search(params[:search], @diary_or_hashtag, @how_search).page(params[:page]).reverse_order
 	else
-		@hashtags = Hashtag.search(params[:search], @diary_or_hashtag, @how_search)
+		@hashtags = Hashtag.search(params[:search], @diary_or_hashtag, @how_search).page(params[:page]).reverse_order
 	end
   end
 end

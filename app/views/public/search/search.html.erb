@@ -1,7 +1,6 @@
 <% if @diary_or_hashtag == "1" %>
 	<h1>'<%= @search %>'の検索結果</h1>
 	<table class="table">
-		<% @diaries.each do |diary| %>
 		<thead>
 			<tr>
 				<th>Title</th>
@@ -9,6 +8,7 @@
 			</tr>
 		</thead>
 		<tbody>
+		<% @diaries.each do |diary| %>
 			<tr>
 				<td>
 					<%= link_to diary_path(diary) do %>
@@ -17,21 +17,23 @@
 				</td>
 				<td><%= diary.body %></td>
 			</tr>
-		</tbody>
 		<% end %>
+		</tbody>
 	</table>
+	<%= paginate @diaries %>
+
 
 <% elsif @diary_or_hashtag == "2" %>
 	<h1>'<%= @search %>'の検索結果</h1>
 	<table class="table">
-		<% @hashtags.each do |hashtag| %>
-			<% hashtag.diary_hashtags.each do |hashtags| %>
 			<thead>
 				<tr>
 					<th>Opinion</th>
 				</tr>
 			</thead>
 			<tbody>
+			<% @hashtags.each do |hashtag| %>
+				<% hashtag.diary_hashtags.each do |hashtags| %>
 				<tr>
 					<td>
 						<%= link_to diary_path(hashtags.diary) do %>
@@ -39,8 +41,10 @@
 						<% end %>
 					</td>
 				</tr>
-			</tbody>
+				<% end %>
 			<% end %>
-		<% end %>
+			</tbody>
 	</table>
+	<%= paginate @hashtags %>
+
 <% end %>

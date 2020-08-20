@@ -1,14 +1,14 @@
 <div class="container">
 	<div class="row">
-		<div class="col-6">
-			<table class="table table-bordered">
+		<div class="col-xs-6 col-xs-offset-3">
+			<table class="table table-bordered test">
 				<thead>
 					<th><%= @diary.title %></th>
 				</thead>
 				<tbody>
 					<tr>
 						<td>
-							<%= attachment_image_tag @diary, :image, :fill, 60, 60, format: "jpeg" %>
+							<%= attachment_image_tag @diary, :image, class: 'img', format: "jpeg" %>
 						</td>
 					</tr>
 					<tr>
@@ -24,7 +24,11 @@
 					<tr>
 						<td id="favorites_buttons_<%= @diary.id %>">
 							<%= render partial: 'public/favorites/favorite', locals: { diary: @diary} %>
-					    </td>
+						<% if @diary.user == current_user %>
+						<%= link_to "編集する", edit_diary_path(@diary), class: "btn-sm btn-success" %>
+						<%= link_to "削除する", diary_path(@diary), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger" %>
+						</td>
+						<% end %>
 					</tr>
 				</tbody>
 			</table>

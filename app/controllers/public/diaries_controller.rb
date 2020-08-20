@@ -23,6 +23,7 @@ class Public::DiariesController < ApplicationController
 
 	def index
 		@diaries = Diary.where(user_id: current_user.id)
+		@alldiary = Diary.page(params[:page]).reverse_order
 	end
 
 	def hashtag
@@ -34,6 +35,25 @@ class Public::DiariesController < ApplicationController
 			@diary = @hashtag.diaries.page(params[:page]).per(20).reverse_order
 			@hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.diaries.count}
 		end
+	end
+
+	def edit
+		@diary = Diary.find(params[:id])
+	end
+
+	def update
+		@diary = Diary.find(params[:id])
+		if @diary.update(diary_params)
+			redirect_to diary_path(@diary)
+		else
+			render :edit
+		end
+	end
+
+	def destroy
+		@diary = Diary.find(params[:id])
+		@diary.destroy
+		redirect_to mypage_path(current_user)
 	end
 
 	private
