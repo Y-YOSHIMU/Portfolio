@@ -7,7 +7,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% @diaries.each do |diary| %>
+		<% @alldiary.each do |diary| %>
 		<tr>
 			<td>
 				<%= link_to diary_path(diary.id) do %>
@@ -18,3 +18,4 @@
 		<% end %>
 	</tbody>
 </table>
+<%= paginate @alldiary %>
