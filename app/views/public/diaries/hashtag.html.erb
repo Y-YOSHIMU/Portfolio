@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
     <% if params[:name] == nil %>
 
     <% else %>
@@ -6,7 +6,6 @@
         <h3>#<%= @hashtag.hashname %>:  <%= @diary.count %> 件 </h3>
             <% @diary.each do |diary| %>
                 <div>
-                        <%= diary.created_at.strftime("%Y/%m/%d") %>
                     <span id="favorites-buttons_<%= diary.id %>">
                         <%= render partial: 'public/favorites/favorite', locals: { diary: diary} %>
                     </span>
@@ -25,5 +24,29 @@
                     <% end %>
             <% end %>
         </div>
+    </div>
+</div> -->
+<div class="container">
+    <div>
+        <h3>#<%= @hashtag.hashname %>: <%= @diary.count %> 件</h3>
+        <table>
+            <th>
+                <tr>
+                    <td></td>
+                </tr>
+            </th>
+            <tbody>
+                <% @diary.each do |diary| %>
+                <tr>
+                    <td>
+                 <%= link_to diary_path(diary) do %>
+                    <%= diary.title %>
+                <% end %>
+
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
     </div>
 </div>

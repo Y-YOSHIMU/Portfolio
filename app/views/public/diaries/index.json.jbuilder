@@ -5,10 +5,10 @@ json.array!(@diaries) do |diary|
 	json.url diary_url(diary, format: :html)
 	json.backgroundColor case diary.emotion_status
 		                 when "positive"
-		                 	"red"
+		                 	"#e01e37"
 		                 when "negative"
-		                 	"blue"
+		                 	"#0077b6"
 		                 else
-		                 	"yellow"
+		                 	"#fdc500"
 		                 end
 end

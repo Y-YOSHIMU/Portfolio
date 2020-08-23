@@ -5,3 +5,11 @@ ja:
         normal: "普通"
         positive: "ポジティブ"
         negative: "ネガティブ"
+
+  views:
+    pagination:
+      first: "最初"
+      last: "最後"
+      previous: "前へ"
+      next: "次へ"
+      truncate: "..."

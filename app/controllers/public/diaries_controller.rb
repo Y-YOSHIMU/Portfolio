@@ -28,13 +28,8 @@ class Public::DiariesController < ApplicationController
 
 	def hashtag
 		@user = current_user
-		if params[:name].nil?
-			@hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.diaries.count}
-		else
-			@hashtag = Hashtag.find_by(hashname: params[:name])
-			@diary = @hashtag.diaries.page(params[:page]).per(20).reverse_order
-			@hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.diaries.count}
-		end
+		@hashtag = Hashtag.find_by(hashname: params[:name])
+		@diary = @hashtag.diaries.page(params[:page]).per(20).reverse_order
 	end
 
 	def edit

@@ -21,35 +21,10 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-/*
-$(function () {
-	$(document).on('turbolinks:load', function () {
-		if ($('#calendar').length) {
-			function eventCalendar() {
-				return $('#calendar').fullCalendar({
-				});
-			};
-			function clearCalendar() {
-				$('#calendar').html('');
-			};
-
-			$(document).on('turbolinks:load', function () {
-				eventCalendar();
-			});
-			$(document).on('turbolinks:before-cache', clearCalendar);
-
-			$('#calendar').fullCalendar({
-				events: '/diaries.json',
-				timeFormat: "HH:mm",
-			});
-		}
-	});
-});
-*/
 $(document).on('turbolinks:load', function () {
+   if($("#calendar").hasClass("fc")) { return }
    $('#calendar').fullCalendar({
    	events: '/diaries.json',
    	timeFormat: "HH:mm",
    });
  });
-
