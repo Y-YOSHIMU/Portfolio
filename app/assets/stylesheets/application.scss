@@ -96,7 +96,7 @@ nav {
 }
 
 .index-container {
-	height: 700px;
+	height: 750px;
 	text-align: center;
 	padding-top: 50px;
 
@@ -134,27 +134,23 @@ nav {
 
 // paginate
 .pagination {
-  margin: 30px auto;
-  width: 30%;
+	justify-content: center;
+  	margin: 30px;
 }
 
-.pagination span {
-  background-color: rgba(158, 158, 158, 0.4);
-  text-align: center;
-  width: 50px;
-  border: solid 1px #344963;
-  color: rgb(197, 20, 159);
-  transition: .3s;
-  -webkit-transform: scale(1);
-  transform: scale(1);
+.pagination>li>a {
+	border: none;
+	color: #264653;
+	background-color: #F6EACA;
+	height: 40px;
+	width: 60px;
 }
-.pagination span:hover{
-  transition: .3s;
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+
+// 検証のクラスを参照
+.page-item.active .page-link {
+	background-color: #E76F51;
 }
-.pagination span a:hover{
-  transition: .3s;
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+
+.pagination>li>a:hover {
+	background-color: #F4A666;
 }
