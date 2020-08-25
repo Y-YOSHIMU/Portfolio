@@ -29,7 +29,7 @@ class Public::DiariesController < ApplicationController
 	def hashtag
 		@user = current_user
 		@hashtag = Hashtag.find_by(hashname: params[:name])
-		@diary = @hashtag.diaries.page(params[:page]).per(20).reverse_order
+		@diary = @hashtag.diaries.page(params[:page]).reverse_order
 	end
 
 	def edit

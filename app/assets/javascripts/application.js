@@ -22,9 +22,23 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function () {
-   if($("#calendar").hasClass("fc")) { return }
-   $('#calendar').fullCalendar({
-   	events: '/diaries.json',
-   	timeFormat: "HH:mm",
-   });
- });
+	function readURL(input) {
+		if(input.files && input.files[0]){
+			var reader = new FileReader();
+			reader.onload = function (e) {
+				$('#img_prev').attr('src', e.target.result);
+			}
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+	$("#diary_image").change(function(){
+		readURL(this);
+	});
+
+    if($("#calendar").hasClass("fc")) { return }
+    $('#calendar').fullCalendar({
+   		events: '/diaries.json',
+   		timeFormat: "HH:mm",
+    });
+});
+

@@ -1,28 +1,24 @@
-<div class="container">
-	<div class="row">
-		<h1>新規作成</h1>
-	</div>
-
-	<div class="row">
-		<%= form_with model: @diary do |f| %>
-			<div class="col-4">
-				<div class="form-group">
-					<%= f.label :image, "画像" %>
-					<%= f.attachment_field :image %>
-				</div>
-				<div class="form-group">
-					<%= f.label :"タイトル" %>
-					<%= f.text_field :title %>
-				</div>
-				<div class="form-group">
-					<%= f.label :"本文" %>
-					<%= f.text_area :body %>
-				</div>
-				<div>
-					<%= f.select :emotion_status, Diary.emotion_statuses.keys.map {|k| [I18n.t("enums.diary.emotion_status.#{k}"), k]} %>
-				</div>
-				<%= f.submit "投稿", class: "btn btn-primary" %>
-			</div>
-		<% end %>
-	</div>
+<div class="diarynew-container">
+	<h1 class="diarynew-title">日記作成</h1>
+	<%= form_with model: @diary do |f| %>
+	 	<div class="image_field">
+	        <%= attachment_image_tag @diary, :image, id: "img_prev" , fallback: "public/no-image.png", class: "diary_image" %>
+	    </div>
+	    <div class="diaryform-group">
+	      <%= f.attachment_field :image, placeholder: "画像" %>
+	    </div>
+	    <div class="diaryform-group">
+			<%= f.text_field :title, placeholder: "日記タイトル" %>
+	    </div>
+	    <div class="diaryform-group">
+	    	<%= f.text_area :body, placeholder: "日記本文" %>
+	    </div>
+	    <div class="diaryform-group">
+	    	<h3>書いた時の感情は？</h3>
+			<%= f.select :emotion_status, Diary.emotion_statuses.keys.map {|k| [I18n.t("enums.diary.emotion_status.#{k}"), k]} %>
+		</div>
+		<div class="diaryform-group">
+			<%= f.submit "作成", class: 'btn btn-success btn-lg' %>
+		</div>
+	<% end %>
 </div>

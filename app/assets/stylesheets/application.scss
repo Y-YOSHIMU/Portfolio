@@ -23,7 +23,7 @@
 	box-sizing: border-box;
 }
 
-p, h1, h2, h3 {
+p, h1, h2, h3, th, td, .diaryform-group {
 	font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -135,6 +135,7 @@ nav {
 // paginate
 .pagination {
 	justify-content: center;
+	text-align: center;
   	margin: 30px;
 }
 
