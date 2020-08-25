@@ -1,29 +1,23 @@
-<div class="row">
-    <% if params[:name] == nil %>
+<div class="index-container">
+    <h1 class="index-container__title">#<%= @hashtag.hashname %>: <%= @hashtag.diaries.count %> 件</h1>
 
-    <% else %>
-    <div class="col-xs-6">
-        <h3>#<%= @hashtag.hashname %>:  <%= @diary.count %> 件 </h3>
+    <table class="index-container__table">
+        <thead>
+            <tr>
+                <th class="index-th">#を含む日記タイトル</th>
+            </tr>
+        </thead>
+        <tbody>
             <% @diary.each do |diary| %>
-                <div>
-                        <%= diary.created_at.strftime("%Y/%m/%d") %>
-                    <span id="favorites-buttons_<%= diary.id %>">
-                        <%= render partial: 'public/favorites/favorite', locals: { diary: diary} %>
-                    </span>
-                </div>
-            <% end %>
-    </div>
-    <% end %>
-</div>
-<div class="row">
-    <div class= "col-xs-6">
-        <div>
-            <% @hashtags.sort.reverse.each do |count| %>
-                    <% count[1].each do |hashtag| %>
-                    <p><%= link_to  "##{hashtag.hashname} (#{hashtag.diaries.count}) 件","/diary/hashtag/#{hashtag.hashname}" %>
-                    </p>
+            <tr>
+                <td class="index-td">
+                    <%= link_to diary_path(diary) do %>
+                        <%= diary.title %>
                     <% end %>
+                </td>
+            </tr>
             <% end %>
-        </div>
-    </div>
+        </tbody>
+    </table>
+    <%= paginate @diary %>
 </div>

@@ -1,21 +1,23 @@
-<h1>お気に入り一覧</h1>
+<div class="index-container">
+	<h1 class="index-container__title">お気に入り一覧</h1>
 
-<table class="table">
-	<thead>
-		<tr>
-			<th>タイトル</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @favorites.each do |favorite| %>
-		<tr>
-			<td>
-				<%= link_to diary_path(favorite.diary_id) do %>
-					<%= favorite.diary.title %>
-				<% end %>
-			</td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
-<%= paginate @favorites %>
+	<table class="index-container__table">
+		<thead>
+			<tr>
+				<th class="index-th">タイトル</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @favorites.each do |favorite| %>
+			<tr>
+				<td class="index-td">
+					<%= link_to diary_path(favorite.diary_id), {class: "index-link"} do %>
+						<%= favorite.diary.title %>
+					<% end %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<%= paginate @favorites %>
+</div>

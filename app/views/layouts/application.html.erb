@@ -14,7 +14,7 @@
     <header>
       <h1 class="header_logo">
         <%= link_to root_path do %>
-          <%= image_tag 'image/logo.jpeg', :size => '100x70' %>
+          <%= image_tag 'image/logo.png', :size => '100x70' %>
         <% end %>
       </h1>
       <nav>
@@ -27,6 +27,7 @@
             <li class="nav-list-item"><%= link_to "About", about_path, class: 'nav-link' %></li>
             <li class="nav-list-item"><%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %></li>
             <li class="nav-list-item"><%= link_to "ログイン", new_user_session_path, class: 'nav-link' %></li>
+            <li class="nav-list-item"><%= link_to "問い合せ", new_contact_path, class: 'nav-link' %></li>
           <% end %>
         </ul>
       </nav>

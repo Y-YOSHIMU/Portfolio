@@ -1,10 +1,19 @@
-<h1>お問い合わせ</h1>
-<%= form_for(@contact) do |f| %>
-	<h4>お名前</h4>
-	<%= f.text_field :name %>
-	<h4>メールアドレス＊任意</h4>
-	<%= f.text_field :email %>
-	<h4>メッセージ</h4>
-	<%= f.text_area :message %>
-	<%= f.submit "送信" %>
-<% end %>
+<div class="diarynew-container">
+	<h1 class="diarynew-title">お問い合わせ</h1>
+	<%= form_for(@contact) do |f| %>
+	    <div class="diaryform-group">
+			<h4>お名前</h4>
+			<%= f.text_field :name %>
+	    </div>
+	    <div class="diaryform-group">
+			<h4>メールアドレス：<span class="badge badge-pill badge-primary" >任意</span></h4>
+			<%= f.text_field :email %>
+	    </div>
+	    <div class="diaryform-group">
+	    	<%= f.text_area :message, placeholder: "お問合せ内容:機能のご要望などお気軽にお申し付け下さい" %>
+	    </div>
+		<div class="diaryform-group">
+			<%= f.submit "送信", class: 'btn btn-success btn-lg' %>
+		</div>
+	<% end %>
+</div>

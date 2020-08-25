@@ -1,37 +1,33 @@
-<div class="container">
-	<div class="row">
-		<div class="col-xs-6 col-xs-offset-3">
-			<table class="table table-bordered test">
-				<thead>
-					<th><%= @diary.title %></th>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<%= attachment_image_tag @diary, :image, class: 'img', format: "jpeg" %>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<%= simple_format(render_with_hashtags(@diary.body)) %>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							書いた時の感情：<span class="badge badge-info"><%= @diary.emotion_status_i18n %></span>
-						</td>
-					</tr>
-					<tr>
-						<td id="favorites_buttons_<%= @diary.id %>">
-							<%= render partial: 'public/favorites/favorite', locals: { diary: @diary} %>
-						<% if @diary.user == current_user %>
-						<%= link_to "編集する", edit_diary_path(@diary), class: "btn-sm btn-success" %>
-						<%= link_to "削除する", diary_path(@diary), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger" %>
-						</td>
-						<% end %>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
+<div class="show-container">
+	<table class="show-container__table">
+		<thead>
+			<th class="show-container__table_title"><%= @diary.title %></th>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="show-container__table_img">
+					<%= attachment_image_tag @diary, :image, class: 'img', format: "jpeg" %>
+				</td>
+			</tr>
+			<tr>
+				<td class="show-container__table_body">
+					<%= simple_format(render_with_hashtags(@diary.body)) %>
+				</td>
+			</tr>
+			<tr>
+				<td class="show-container__table_emotion">
+					書いた時の感情：<span class="badge badge-info"><%= @diary.emotion_status_i18n %></span>
+				</td>
+			</tr>
+			<tr>
+				<td id="favorites_buttons_<%= @diary.id %>" class="show-container__table_favo" >
+					<%= render partial: 'public/favorites/favorite', locals: { diary: @diary} %>
+				<% if @diary.user == current_user %>
+				<%= link_to "編集する", edit_diary_path(@diary), class: "btn-sm btn-success mybtn_edit" %>
+				<%= link_to "削除する", diary_path(@diary), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger mybtn_destroy" %>
+				</td>
+				<% end %>
+			</tr>
+		</tbody>
+	</table>
 </div>
