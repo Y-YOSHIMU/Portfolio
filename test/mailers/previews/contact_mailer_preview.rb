@@ -2,7 +2,7 @@
 class ContactMailerPreview < ActionMailer::Preview
 
 	def contact
-		contact = contact.new(name: "test", message: "testmessage")
+		contact = contact.new
 		ContactMailer.send_mail(contact)
 	end
 end
