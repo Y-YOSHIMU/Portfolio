@@ -1,0 +1,23 @@
+<div class="index-container">
+    <h1 class="index-container__title">#<%= @hashtag.hashname %>: <%= @hashtag.diaries.count %> 件</h1>
+
+    <table class="index-container__table">
+        <thead>
+            <tr>
+                <th class="index-th">#を含む日記タイトル</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @diary.each do |diary| %>
+            <tr>
+                <td class="index-td">
+                    <%= link_to diary_path(diary) do %>
+                        <%= diary.title %>
+                    <% end %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <%= paginate @diary %>
+</div>

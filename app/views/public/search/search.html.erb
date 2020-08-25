@@ -1,0 +1,49 @@
+<div class="index-container">
+	<% if @diary_or_hashtag == "1" %>
+		<h1 class="index-container__title">'<%= @search %>'の検索結果</h1>
+		<table class="index-container__table">
+			<thead>
+				<tr>
+					<th class="index-th">日記のタイトル</th>
+				</tr>
+			</thead>
+			<tbody>
+			<% @diaries.each do |diary| %>
+				<tr>
+					<td class="index-td">
+						<%= link_to diary_path(diary), {class: "index-link"} do %>
+							<%= diary.title %>
+						<% end %>
+					</td>
+				</tr>
+			<% end %>
+			</tbody>
+		</table>
+		<%= paginate @diaries %>
+
+	<% elsif @diary_or_hashtag == "2" %>
+		<h1 class="index-container__title">'<%= @search %>'の検索結果</h1>
+		<table class="index-container__table">
+			<thead>
+				<tr>
+					<th class="index-th">日記のタイトル</th>
+				</tr>
+			</thead>
+			<tbody>
+			<% @hashtags.each do |hashtag| %>
+				<% hashtag.diary_hashtags.each do |hashtags| %>
+				<tr>
+					<td class="index-td">
+						<%= link_to diary_path(hashtags.diary), {class: "index-link"} do %>
+							<%= hashtags.diary.title %>
+						<% end %>
+					</td>
+				</tr>
+				<% end %>
+			<% end %>
+			</tbody>
+		</table>
+		<%= paginate @hashtags %>
+
+	<% end %>
+</div>

@@ -13,4 +13,32 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery3
+//= require moment
+//= require fullcalendar
+//= require fullcalendar/locale-all
+//= require popper
+//= require bootstrap-sprockets
 //= require_tree .
+
+$(document).on('turbolinks:load', function () {
+	function readURL(input) {
+		if(input.files && input.files[0]){
+			var reader = new FileReader();
+			reader.onload = function (e) {
+				$('#img_prev').attr('src', e.target.result);
+			}
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+	$("#diary_image").change(function(){
+		readURL(this);
+	});
+
+    if($("#calendar").hasClass("fc")) { return }
+    $('#calendar').fullCalendar({
+   		events: '/diaries.json',
+   		timeFormat: "HH:mm",
+    });
+});
+

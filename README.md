@@ -1,28 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 # 日記共有サイト（未定）
 
 ## サイト概要
@@ -55,3 +30,4 @@ Things you may want to cover:
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/10UyRf-rKzS2BviMOxJxXjyf2XBzXsNF5qrEuBhlxdNM/edit?usp=sharing
+
