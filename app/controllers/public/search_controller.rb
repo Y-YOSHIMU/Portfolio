@@ -1,7 +1,7 @@
 class Public::SearchController < ApplicationController
 	before_action :authenticate_user!
 
-  　def search
+	def search
 		@diary_or_hashtag = params[:option]
 		@how_search = params[:choice]
 		@search = params[:search]
@@ -10,5 +10,5 @@ class Public::SearchController < ApplicationController
 		else
 			@hashtags = Hashtag.search(params[:search], @diary_or_hashtag, @how_search).page(params[:page]).reverse_order
 		end
-  　end
+  	end
 end
