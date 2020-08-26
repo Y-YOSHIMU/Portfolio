@@ -72,6 +72,8 @@ gem 'kaminari', '~> 1.2.1'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'dotenv-rails'
+
 group :production do
   gem 'mysql2'
+  gem 'listen', '>= 3.0.5', '< 3.2'
 end
