@@ -10,5 +10,5 @@ class Public::SearchController < ApplicationController
 		else
 			@hashtags = Hashtag.search(params[:search], @diary_or_hashtag, @how_search).page(params[:page]).reverse_order
 		end
-  	end
+	end
 end
