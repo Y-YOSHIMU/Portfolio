@@ -11,28 +11,48 @@
 		</p>
 		<h3>コンセプト</h3>
 		<p>
-			このアプリでは他のユーザーと繋がることはできません。<br/>			現代では切っても切り離せないSNSですが、このアプリ内では承認欲求を捨てて<br/>
-			他人の評価を気にせず好きなことを書いて自分自身を見つめ直す時間を作りましょう。<br/>
+			自粛生活やリモートワーク、オンライン授業の増加で<br/>対面での接触が減ったことで外の世界との距離ができたこと。<br/>
+			匿名での誹謗中傷が問題視されてきた中でSNSをもう一度考え直すこと。<br/>
+			これらを考えた結果、プライベート色の強い日記ではあるがそれを共有することで<br/>新たな１日を知ることの出来るアプリになればいいと思い作成しました。<br/>
 		</p>
-		<h3>使い方</h3>
-		<p></p>
+		<h3>概要</h3>
+		<p>
+			日記作成の際のユーザー情報やお気に入りの情報は<br/>他のユーザーには知られないので、プライベートな管理ができます。<br/>
+			しかし、日記自体は匿名で公開されるのでプライバシーの情報や<br/>特定の個人への誹謗中傷の内容は注意が必要です。<br/>
+			このアプリでは他のユーザーと繋がることはできません。<br/>
+			このアプリ内では承認欲求を捨てて、他人の評価を気にせず<br/>好きなことを書いて自分自身を見つめ直す時間を作りましょう。<br/>
+		</p>
 	</div>
 	<div class="about-container__content-title">
-		<p>texttexttexttexttexttext<br/>texttexttexttexttexttext<br/>texttexttexttexttexttexttext<br/>texttexttexttexttexttext<br/>texttexttexttexttexttexttext</p>
+		<h2>使用方法</h2>
 	</div>
 	<div class="about-container__content-text">
-		<h2>日記を管理</h2>
-	</div>
-	<div class="about-container__content-title">
-		<h2>１日を共有</h2>
-	</div>
-	<div class="about-container__content-text">
-		<p>texttexttexttexttexttext<br/>texttexttexttexttexttext<br/>texttexttexttexttexttexttext<br/>texttexttexttexttexttext<br/>texttexttexttexttexttexttext</p>
-	</div>
-	<div class="about-container__content-title">
-		<p>texttexttexttexttexttext<br/>texttexttexttexttexttext<br/>texttexttexttexttexttexttext<br/>texttexttexttexttexttext<br/>texttexttexttexttexttexttext</p>
-	</div>
-	<div class="about-container__content-text">
-		<h2>他の１日を見つけよう</h2>
+		<h3>日記の作成</h3>
+		<p>
+			マイページの右下にある<%= image_tag 'public/create.png', alt: "新規投稿" %>ボタンから作成ができます。<br/>
+			本文には#ハッシュタグをつけることが可能です。<br/>
+			同じ悩みを持った方や似たような境遇の方が見つけやすくなります。
+		</p>
+		<h3>日記の管理</h3>
+		<p>
+			マイページのカレンダー上に日記のタイトルが表示されます。<br/>
+			書いた当時の感情が保存できるようになっており、<br/>
+			<span class="emotion1">普通</span>、
+			<span class="emotion2">ポジティブ</span>、
+			<span class="emotion3">ネガティブ</span>
+			の色でタイトルが表示されます。<br/>
+		</p>
+		<h3>日記の検索</h3>
+		<p>
+			マイページの検索ボックスではタイトルと本文のキーワードや、<br/>
+			ハッシュタグから検索ができます。<br/>
+			また、日記の詳細ページから本文の#ハッシュタグリンクを押すことで<br/>
+			同じ#ハッシュタグを持つ日記を探すことができます。<br/>
+			お気に入りをつけることができますが、誰がつけたのかはわからないので<br/>
+			ブックマークのようにお使いください。
+		</p>
 	</div>
 </div>
+<footer class="footer">
+	<p class="footer-text">©️ All rights reserved by aruhi</p>
+</footer>

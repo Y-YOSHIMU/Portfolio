@@ -64,6 +64,12 @@ nav {
 .footer {
 	height: 100px;
 	background-color: #F7BC8D;
+	display: flex;
+	align-items: center;
+}
+
+.footer-text {
+	margin: 0 auto;
 }
 
 .form-container {
