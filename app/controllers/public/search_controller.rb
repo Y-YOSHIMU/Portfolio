@@ -8,7 +8,8 @@ class Public::SearchController < ApplicationController
 		if @diary_or_hashtag == "1"
 			@diaries = Diary.search(params[:search], @diary_or_hashtag, @how_search).page(params[:page]).reverse_order
 		else
-			@hashtags = Hashtag.search(params[:search], @diary_or_hashtag, @how_search).page(params[:page]).reverse_order
+			hashtags = Hashtag.search(params[:search], @diary_or_hashtag, @how_search)
+			@diary_hashtags = DiaryHashtag.where(hashtag_id: hashtags).page(params[:page]).reverse_order
 		end
 	end
 end

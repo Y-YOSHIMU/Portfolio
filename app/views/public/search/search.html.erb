@@ -21,7 +21,7 @@
 		</table>
 		<%= paginate @diaries %>
 
-	<% elsif @diary_or_hashtag == "2" %>
+	<% else %>
 		<h1 class="index-container__title">'#<%= @search %>'の検索結果</h1>
 		<table class="index-container__table">
 			<thead>
@@ -30,20 +30,18 @@
 				</tr>
 			</thead>
 			<tbody>
-			<% @hashtags.each do |hashtag| %>
-				<% hashtag.diary_hashtags.each do |hashtags| %>
+			<% @diary_hashtags.each do |hashtag| %>
 				<tr>
 					<td class="index-td">
-						<%= link_to diary_path(hashtags.diary), {class: "index-link"} do %>
-							<%= hashtags.diary.title %>
+						<%= link_to diary_path(hashtag.diary), {class: "index-link"} do %>
+							<%= hashtag.diary.title %>
 						<% end %>
 					</td>
 				</tr>
-				<% end %>
 			<% end %>
 			</tbody>
 		</table>
-		<%= paginate @hashtags %>
+		<%= paginate @diary_hashtags %>
 
 	<% end %>
 </div>
