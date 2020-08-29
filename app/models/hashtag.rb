@@ -3,7 +3,7 @@ class Hashtag < ApplicationRecord
 	has_many :diary_hashtags, dependent: :destroy
 	has_many :diaries, through: :diary_hashtags
 
-	def Hashtag.search(search, diary_or_hashtag, how_search)
+	def self.search(search, diary_or_hashtag, how_search)
 		if diary_or_hashtag == "2"
 			if how_search == "1"
 				Hashtag.where(['hashname LIKE ?', "%#{search}%"])
