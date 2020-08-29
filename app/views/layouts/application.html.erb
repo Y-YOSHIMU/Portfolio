@@ -21,7 +21,7 @@
         <ul class="nav-list">
           <% if user_signed_in? %>
             <li class="nav-list-item"><%= link_to "マイページ", mypage_path %></li>
-            <li class="nav-list-item"><%= link_to "日記一覧", diaries_path %></li>
+            <li class="nav-list-item"><%= link_to "問い合せ", new_contact_path %></li>
             <li class="nav-list-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
           <% elsif %>
             <li class="nav-list-item"><%= link_to "About", about_path, class: 'nav-link' %></li>
