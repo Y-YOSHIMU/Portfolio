@@ -2,8 +2,12 @@ class Diary < ApplicationRecord
 	belongs_to :user
 	has_many :favorites, dependent: :destroy
 	attachment :image
-    has_many :diary_hashtags, dependent: :destroy
-    has_many :hashtags, through: :diary_hashtags
+  has_many :diary_hashtags, dependent: :destroy
+  has_many :hashtags, through: :diary_hashtags
+
+  validates :title, presence: true, length: { maximum: 30 }
+  validates :body, presence: true, length: { maximum: 1000 }
+
 
 #DBへのコミット直前に実施する
   	after_create do

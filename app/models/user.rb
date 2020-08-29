@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
   has_many :diaries, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  # has_many :favorites_diaries, through: :favorites, source: :diary
+
+  validates :nickname, presence: true, length: { maximum: 10 }
+
 end
