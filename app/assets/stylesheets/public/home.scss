@@ -4,111 +4,124 @@
 
 
 .home {
-	background-image: image-url("public/top.jpg");
-	background-size: cover;
-	background-position: center;
-	height: 800px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
+  background-image: image-url("public/top.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 
-	&__text-one {
-		text-align: center;
-		height: 300px;
-		width: 40%;
-		background-color: rgba( 38, 70, 83, 0.9);
-		color: #FBE4DA;
+  &__text-one {
+    text-align: center;
+    height: 300px;
+    width: 40%;
+    background-color: rgba( 38, 70, 83, 0.9);
+    color: #FBE4DA;
 
-		h1 {
-			font-size: 55px;
-			padding-top: 40px;
-		}
+    h1 {
+      font-size: 55px;
+      padding-top: 40px;
+    }
 
-		p {
-			font-size: 20px;
-			padding-top:30px;
-			line-height: 2;
-		}
-	}
+    p {
+      font-size: 20px;
+      padding-top:30px;
+      line-height: 2;
+    }
+  }
 
-	&__text-two {
-		height: 240px;
-		width: 25%;
-		text-align: center;
-		padding-top: 35px;
+  &__text-two {
+    height: 240px;
+    width: 25%;
+    text-align: center;
+    padding-top: 35px;
 
-		.btn {
-			border-radius: 100vh;
-		}
+    .btn {
+      border-radius: 100vh;
+    }
 
-		&__btn-group {
-			padding-top: 60px;
+    &__btn-group {
+      padding-top: 60px;
 
-			.btn {
-				margin: 0 32px;
-			}
-		}
-	}
+      .btn {
+        margin: 0 32px;
+      }
+    }
+  }
 }
 
 .about-container {
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	width: 80%;
-	margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
 
-	h1 {
-		width: 80%;
-		text-align: center;
-		margin-top: 50px;
-	}
+  h1 {
+    width: 80%;
+    text-align: center;
+    margin-top: 50px;
+  }
 
-	&__content-title {
-		text-align: center;
-		width: 40%;
-		border-bottom: 1px solid;
+  &__content-title {
+    text-align: center;
+    width: 40%;
+    border-bottom: 1px solid;
 
-		h2 {
-			position: sticky;
-			top: 100px;
-			left: 0;
-			margin-top: 100px;
-		}
-	}
+    h2 {
+      position: sticky;
+      top: 100px;
+      left: 0;
+      margin-top: 100px;
+    }
+  }
 
-	&__content-text {
-		text-align: center;
-		width: 60%;
-		margin-top: 50px;
-		border-bottom: 1px solid;
+  &__content-text {
+    text-align: center;
+    width: 60%;
+    margin-top: 50px;
+    border-bottom: 1px solid;
 
-		p {
-			font-size: 17px;
-			line-height: 2;
-		}
-		h3 {
-			padding: 30px 0;
-		}
+    p {
+      font-size: 17px;
+      line-height: 2;
+    }
+    h3 {
+      padding: 30px 0;
+    }
 
-		img {
-			height: 40px;
-			width: 40px;
-			border: 1px solid transparent;
-			border-radius: 50%;
-			background-image: linear-gradient(0deg, green, limegreen);
-			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-		}
+    img {
+      height: 40px;
+      width: 40px;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      background-image: linear-gradient(0deg, green, limegreen);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    }
 
-		.emotion1 {
-			color: #fdc500;
-		}
-		.emotion2 {
-			color: #e01e37;
-		}
-		.emotion3 {
-			color: #0077b6;
-		}
-	}
+    .emotion1 {
+      color: #fdc500;
+    }
+    .emotion2 {
+      color: #e01e37;
+    }
+    .emotion3 {
+      color: #0077b6;
+    }
+  }
+}
+
+/* iPhone X以下のサイズを想定 */
+@media screen and (max-width: 425px) {
+  .home__text-one {
+    width: 100%;
+  }
+  .home__text-one h1 {
+    font-size: 10vw;
+  }
+  .home__text-two {
+    width: 100%;
+  }
 }
