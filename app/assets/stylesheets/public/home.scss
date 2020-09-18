@@ -124,4 +124,22 @@
   .home__text-two {
     width: 100%;
   }
+
+  .about-container h1 {
+    width: 100%;
+    margin-top: 0;
+    padding-top: 50px;
+  }
+  .about-container {
+    display: block;
+    text-align: center;
+
+    &__content-title, &__content-text {
+      width: 100%;
+
+      h2 {
+        position: static;
+      }
+    }
+  }
 }

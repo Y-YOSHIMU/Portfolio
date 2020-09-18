@@ -3,56 +3,68 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .users-container {
-	display: flex;
-	align-content: space-between;
+  display: flex;
+  align-content: space-between;
 
-	&__calendar {
-		flex: 2;
-	}
-	&__sidebar {
-		flex: 1;
+  &__calendar {
+    flex: 2;
+  }
+  &__sidebar {
+    flex: 1;
 
-		.search {
-			.search-group {
-				text-align: center;
-				margin-top: 30px;
+    .search {
+      .search-group {
+        text-align: center;
+        margin-top: 30px;
 
-				input[type="text"] {
-					width: 300px;
-					margin: 0;
-				}
+        input[type="text"] {
+          width: 300px;
+          margin: 0;
+        }
 
-				.search-button {
-					width: 30px;
-					margin: 0;
-				}
-			}
-			h3 {
-				text-align: center;
-			}
-		}
-		.favorite {
-			text-align: center;
-			margin-top: 50px;
-		}
-	}
+        .search-button {
+          width: 30px;
+          margin: 0;
+        }
+      }
+      h3 {
+        text-align: center;
+      }
+    }
+    .favorite {
+      text-align: center;
+      margin-top: 50px;
+    }
+  }
 }
 
 #create-diary {
-	position: fixed;
-	right: 80px;
-	bottom: 80px;
+  position: fixed;
+  right: 80px;
+  bottom: 80px;
 }
 
 #create-diary img {
-	height: 100px;
-	width: 100px;
-	border: 1px solid transparent;
-	border-radius: 50%;
-	background-image: linear-gradient(0deg, green, limegreen);
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  height: 100px;
+  width: 100px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(0deg, green, limegreen);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 }
 
-#calendar {
-
+/* iPhone X以下のサイズを想定 */
+@media screen and (max-width: 425px) {
+  .users-container {
+    display: block;
+  }
+  .nickname {
+    font-size: 8vw;
+  }
+  #create-diary {
+    position: static;
+    text-align: center;
+    display: block;
+    margin-top: 50px;
+  }
 }

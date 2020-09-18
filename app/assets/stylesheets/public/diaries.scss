@@ -67,6 +67,7 @@
 
 .diary_image {
   width: 440px;
+  max-width: 100%;
   height: 300px;
   object-fit: cover;
 }
@@ -77,6 +78,7 @@
 
 textarea {
 	width: 600px;
+	max-width: 100%;
 	height: 600px;
 	font-family: inherit;
 	font-size: 100%;
@@ -89,6 +91,7 @@ textarea {
 
 	input[type="text"] {
 		width: 500px;
+		max-width: 100%;
 		height: 40px;
 	}
 
@@ -105,4 +108,18 @@ textarea {
 .diarynew-title {
 	padding-top: 50px;
 	padding-bottom: 10px;
+}
+
+
+/* iPhone X以下のサイズを想定 */
+@media screen and (max-width: 425px) {
+	.show-container {
+		&__table {
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+	.img {
+		height: auto;
+	}
 }
