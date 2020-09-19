@@ -175,4 +175,10 @@ nav {
     display: list-item;
     text-align: center;
   }
+
+  .index-container {
+    &__table {
+      width: 100%;
+    }
+  }
 }
