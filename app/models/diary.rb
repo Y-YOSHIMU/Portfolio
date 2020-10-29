@@ -12,6 +12,7 @@ class Diary < ApplicationRecord
 #DBへのコミット直前に実施する
   	after_create do
     	diary = Diary.find_by(id: self.id)
+      # 正規表現 \w 英数字, \p{Han} 漢字, あ-ヶ 平仮名カタカナ, ｦ-°ー 半角カタカナ, ° => どを変換
     	hashtags = body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
     	hashtags.uniq.map do |hashtag|
       #ハッシュタグは先頭の'#'を外した上で保存
